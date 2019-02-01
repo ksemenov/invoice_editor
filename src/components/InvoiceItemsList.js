@@ -19,8 +19,11 @@ class InvoiceItemsList extends React.Component {
     if (this.props.invoices){
       let invoices = this.props.invoices.map((invoice,index) => {
         return (
-          <InvoiceRow key={index} invoice={invoice} index={index}
-                      removeInvoice={this.props.removeInvoice}/>
+          <InvoiceRow key={index} invoice={invoice} invoiceIndex={index}
+                      removeInvoice={this.props.removeInvoice}
+                      updateItemName={this.props.updateItemName}
+                      updateItemQty={this.props.updateItemQty}
+                      updateItemPrice={this.props.updateItemPrice}/>
         );
       });
       return (

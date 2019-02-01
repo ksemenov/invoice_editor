@@ -13,8 +13,9 @@ class InvoiceTable extends React.Component {
 
     this.addInvoice = this.addInvoice.bind(this);
     this.removeInvoice = this.removeInvoice.bind(this);
-
-
+    this.updateItemName = this.updateItemName.bind(this);
+    this.updateItemQty = this.updateItemQty.bind(this);
+    this.updateItemPrice = this.updateItemPrice.bind(this);
   }
 
 // creates a new invoice object and adds to invoice list
@@ -36,17 +37,34 @@ class InvoiceTable extends React.Component {
     this.setState({invoices: invoices});
   }
 
-  // updateItemName(){
-  //
-  // }
+//dynamically updates item's name in a specific invoice
+  updateItemName(invoiceIndex, name){
+    let invoices = this.state.invoices.slice();
+    let updatedInvoice = invoices[invoiceIndex];
+    updatedInvoice.name = name;
+    invoices[invoiceIndex] = updatedInvoice;
+    this.setState({invoices: invoices});
+  }
 
-  // updateItemQty(){
-  //
-  // }
+  //dynamically updates item's quantity in a specific invoice
+  updateItemQty(invoiceIndex, qty){
+    let invoices = this.state.invoices.slice();
+    let updatedInvoice = invoices[invoiceIndex];
+    updatedInvoice.qty = qty;
+    updatedInvoice.total = (updatedInvoice.price*qty).toFixed(2);
+    invoices[invoiceIndex] = updatedInvoice;
+    this.setState({invoices: invoices});
+  }
 
-  // updateItemPrice() {
-  //
-  // }
+  //dynamically updates item's price in a specific invoice
+  updateItemPrice(invoiceIndex, price){
+    let invoices = this.state.invoices.slice();
+    let updatedInvoice = invoices[invoiceIndex];
+    updatedInvoice.price = price;
+    updatedInvoice.total = (updatedInvoice.qty*price).toFixed(2);
+    invoices[invoiceIndex] = updatedInvoice;
+    this.setState({invoices: invoices});
+  }
 
   render() {
     return (
@@ -62,7 +80,10 @@ class InvoiceTable extends React.Component {
         </thead>
         <InvoiceItemsList invoices={this.state.invoices}
                           addInvoice={this.addInvoice}
-                          removeInvoice={this.removeInvoice}/>
+                          removeInvoice={this.removeInvoice}
+                          updateItemName={this.updateItemName}
+                          updateItemQty={this.updateItemQty}
+                          updateItemPrice={this.updateItemPrice}/>
         <InvoiceTotals invoices={this.state.invoices}/>
       </table>
     )
