@@ -39,6 +39,8 @@ class InvoiceRow extends React.Component {
     let itemName = this.props.invoice.name;
     let qty = this.props.invoice.qty;
     let price = this.props.invoice.price;
+    let total = this.props.invoice.total;
+
 
     return(
       <tr>
@@ -50,7 +52,7 @@ class InvoiceRow extends React.Component {
         </td>
         <td>[ $<input type="number" placeholder="00.00" value={price}
                       onChange={(e) => this.handlePriceChange(e, invoiceIndex)}/> ]</td>
-        <td>[ $ ]</td>
+        <td>[ ${total} ]</td>
         <td onClick={this.onClickOnX}>x</td>
       </tr>
     )
