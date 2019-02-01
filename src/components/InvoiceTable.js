@@ -9,6 +9,7 @@ class InvoiceTable extends React.Component {
     super(props);
     this.state = {
       invoices: [],
+      tax: 5,
     }
 
     this.addInvoice = this.addInvoice.bind(this);
@@ -16,6 +17,7 @@ class InvoiceTable extends React.Component {
     this.updateItemName = this.updateItemName.bind(this);
     this.updateItemQty = this.updateItemQty.bind(this);
     this.updateItemPrice = this.updateItemPrice.bind(this);
+    this.updateTaxRate = this.updateTaxRate.bind(this);
   }
 
 // creates a new invoice object and adds to invoice list
@@ -66,6 +68,11 @@ class InvoiceTable extends React.Component {
     this.setState({invoices: invoices});
   }
 
+//dynamically updates tax rate
+  updateTaxRate(rate) {
+    this.setState({tax: rate});
+  }
+
   render() {
     return (
       <table>
@@ -84,7 +91,9 @@ class InvoiceTable extends React.Component {
                           updateItemName={this.updateItemName}
                           updateItemQty={this.updateItemQty}
                           updateItemPrice={this.updateItemPrice}/>
-        <InvoiceTotals invoices={this.state.invoices}/>
+        <InvoiceTotals invoices={this.state.invoices}
+                        updateTaxRate={this.updateTaxRate}
+                        tax={this.state.tax}/>
       </table>
     )
   }
