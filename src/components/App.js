@@ -2,6 +2,9 @@ import React from 'react';
 import logo from '../assets/logo.svg';
 import '../css/App.css';
 
+import InvoiceTable from './InvoiceTable';
+
+
 class App extends React.Component {
   render() {
     return (
@@ -12,8 +15,9 @@ class App extends React.Component {
         </div>
 
         { /* Insert your code here */}
+        <InvoiceTable />
 
-        <div>hello world</div>
+        {/* <div>hello world</div> */}
       </div>
     );
   }
