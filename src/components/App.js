@@ -15,7 +15,9 @@ class App extends React.Component {
         </div>
 
         { /* Insert your code here */}
-        <InvoiceTable />
+
+          <InvoiceTable />
+
 
         {/* <div>hello world</div> */}
       </div>

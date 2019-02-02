@@ -44,15 +44,15 @@ class InvoiceRow extends React.Component {
 
     return(
       <tr>
-        <td><input type="text" placeholder="Item Name" value={itemName}
+        <td className="item-col"><input className="itemName" type="text" placeholder="Item Name" value={itemName}
                     onChange={(e) => this.handleNameChange(e, invoiceIndex)}/>
         </td>
-        <td>[ <input type="number" placeholder="0" min="0" value={qty}
-                    onChange={(e) => this.handleQtyChange(e, invoiceIndex)}/> ]
+        <td><input type="number" placeholder="0" min="0" value={qty}
+                    onChange={(e) => this.handleQtyChange(e, invoiceIndex)}/>
         </td>
-        <td>[ $<input type="number" placeholder="00.00" value={price}
-                      onChange={(e) => this.handlePriceChange(e, invoiceIndex)}/> ]</td>
-        <td>[ ${total} ]</td>
+        <td colSpan="2"> $<input className="itemPrice"type="number" placeholder="00.00" value={price}
+                      onChange={(e) => this.handlePriceChange(e, invoiceIndex)}/> </td>
+        <td colSpan="2" className="itemTotal"> ${total} </td>
         <td onClick={this.onClickOnX}>x</td>
       </tr>
     )

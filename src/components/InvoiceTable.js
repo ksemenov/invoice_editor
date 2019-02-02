@@ -75,14 +75,15 @@ class InvoiceTable extends React.Component {
 
   render() {
     return (
+      <div className="table-container">
       <table>
-        <thead>
+        <thead className="heading">
           <tr>
-            <th>Item</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Total</th>
-            <th></th>
+            <th className="item-col">Item</th>
+            <th className="qty-col">Qty</th>
+            <th className="price-col" colSpan="2">Price</th>
+            <th className="total-col" colSpan="2">Total</th>
+            <th className="x-col"></th>
           </tr>
         </thead>
         <InvoiceItemsList invoices={this.state.invoices}
@@ -95,6 +96,7 @@ class InvoiceTable extends React.Component {
                         updateTaxRate={this.updateTaxRate}
                         tax={this.state.tax}/>
       </table>
+      </div>
     )
   }
 }

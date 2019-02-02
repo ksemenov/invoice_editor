@@ -26,22 +26,22 @@ class InvoiceTotals extends React.Component{
     return(
       <tfoot>
         <tr>
-          <td colSpan="2"></td>
-          <th>Subtotal</th>
+          <td colSpan="4"></td>
+          <th colSpan="1">Subtotal</th>
           <td colSpan="2" >${subtotal.toFixed(2)}</td>
         </tr>
         <tr>
-          <td colSpan="2"></td>
-          <th>Tax (<input type="number" style={{width: 40}} min="0" max="100" value={tax}
+          <td colSpan="4"></td>
+          <th colSpan="1">Tax (<input className="taxRate" type="number" style={{width: 40}} min="0" max="100" value={tax}
                           onChange={this.handleTaxChange}/>%)</th>
           <td colSpan="2">${taxed.toFixed(2)}</td>
         </tr>
         <tr>
-          <td colSpan="2"></td>
-          <th>Total</th>
+          <td colSpan="4"></td>
+          <th colSpan="1">Total</th>
           <td colSpan="2">${finalTotal.toFixed(2)}</td>
         </tr>
-      </tfoot>
+       </tfoot>
     )
   }
 }

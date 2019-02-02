@@ -4,3 +4,103 @@ body {
   font-family: sans-serif;
   background: #eee;
 }
+
+
+/* Global Table styles
+*****************************/
+input {
+  font-family: sans-serif;
+  font-size: inherit;
+  width: 55px;
+  background: none;
+  border: none;
+  font-family: 'Fahkwang', sans-serif;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+@media screen and (max-width: 750px) {
+  table {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  table {
+    font-size: 0.5em;
+  }
+}
+
+
+table {
+  max-width: 95%;
+  margin: 30px auto;
+  border-radius: 10px;
+  border-collapse: collapse;
+
+  font-family: 'Fahkwang', sans-serif;
+  /* background-color: white; */
+}
+
+td, th {
+  padding: 5px 0;
+}
+
+
+/* Table Header styles
+*****************************/
+
+thead th {
+  background-color: #35c6ff;
+  color: white;
+  font-size: 1.7em;
+}
+
+.item-col {
+  text-align: left;
+  padding-left: 10px;
+  width: 30%;
+}
+
+.qty-col{
+  width: 15%;
+}
+
+.price-col, .total-col {
+  width: 20%;
+}
+
+.x-col{
+  width: 5%;
+}
+
+
+/* Table Body styles
+*****************************/
+.itemName {
+  width: 90%;
+}
+
+tbody tr:nth-child(even){
+  background-color: #d1efff;
+}
+
+.itemTotal {
+  max-width: 50px;
+  overflow: auto;
+}
+
+.itemPrice {
+  width: 75px;
+}
+
+
+/* Table Footer styles
+*****************************/
+tfoot th{
+  text-align: left;
+
+}

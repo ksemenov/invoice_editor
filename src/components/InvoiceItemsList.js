@@ -30,10 +30,10 @@ class InvoiceItemsList extends React.Component {
         <tbody>
           {invoices}
           <tr onClick={this.onClick}>
-            <td>[ New Item ]</td>
-            <td>[ ]</td>
-            <td>[ ]</td>
-            <td>[ ]</td>
+            <td className="item-col">[ New Item ]</td>
+            <td></td>
+            <td colSpan="2"></td>
+            <td colSpan="2"></td>
             <td></td>
           </tr>
         </tbody>
@@ -42,11 +42,11 @@ class InvoiceItemsList extends React.Component {
     } else {
       return (
         <tbody>
-          <tr onClick={this.onClick}>
+          <tr onClick={this.onClick} className="item-col">
             <td>[ New Item ]</td>
-            <td>[ ]</td>
-            <td>[ ]</td>
-            <td>[ ]</td>
+            <td></td>
+            <td colSpan="2"></td>
+            <td>[</td>
             <td></td>
           </tr>
         </tbody>
